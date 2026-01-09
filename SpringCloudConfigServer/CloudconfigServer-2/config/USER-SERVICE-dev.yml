@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/hotel-project
+    url: jdbc:mysql://localhost:3306/hotel_project
     username: root
     password: Sharma@123
     driver-class-name: com.mysql.cj.jdbc.Driver
