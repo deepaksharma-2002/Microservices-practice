@@ -47,7 +47,7 @@ spring:
           predicates:
             - Path=/api/cart/**
           filters:
-            - StripPrefix=2
+            - StripPrefix=1
 
         # Payment Service
         - id: payment-service
