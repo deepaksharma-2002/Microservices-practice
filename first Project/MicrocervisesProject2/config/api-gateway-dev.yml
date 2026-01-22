@@ -64,6 +64,8 @@ spring:
             - Path=/api/rating/**
           filters:
             - StripPrefix=1
+server:
+  port: 8765
 
 eureka:
   client:
