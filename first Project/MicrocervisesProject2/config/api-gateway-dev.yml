@@ -15,7 +15,7 @@ spring:
           predicates:
             - Path=/api/user/**
           filters:
-            - StripPrefix=2
+            - StripPrefix=1
 
         # Product Service
         - id: product-service
@@ -23,7 +23,7 @@ spring:
           predicates:
             - Path=/api/product/**
           filters:
-            - StripPrefix=2
+            - StripPrefix=1
 
         # Order Service
         - id: order-service
@@ -31,7 +31,7 @@ spring:
           predicates:
             - Path=/api/order/**
           filters:
-            - StripPrefix=2
+            - StripPrefix=1
 
         # Inventory Service
         - id: inventory-service
@@ -39,7 +39,7 @@ spring:
           predicates:
             - Path=/api/inventory/**
           filters:
-            - StripPrefix=2
+            - StripPrefix=1
 
         # Cart Service
         - id: cart-service
@@ -55,7 +55,7 @@ spring:
           predicates:
             - Path=/api/payment/**
           filters:
-            - StripPrefix=2
+            - StripPrefix=1
 
         # Rating / Review Service
         - id: rating-service
@@ -63,7 +63,7 @@ spring:
           predicates:
             - Path=/api/rating/**
           filters:
-            - StripPrefix=2
+            - StripPrefix=1
 
 eureka:
   client:
