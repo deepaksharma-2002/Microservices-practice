@@ -1,7 +1,7 @@
-spring:
-  application:
-    name: api-gateway
+server:
+  port: 8765
 
+spring:
   cloud:
     gateway:
       discovery:
@@ -10,7 +10,6 @@ spring:
           lower-case-service-id: true
 
       routes:
-
         # User Service
         - id: user-service
           uri: lb://user-service
@@ -59,19 +58,16 @@ spring:
           filters:
             - StripPrefix=1
 
-        # Rating / Review Service
+        # Rating Service
         - id: rating-service
           uri: lb://rating-service
           predicates:
             - Path=/api/rating/**
           filters:
             - StripPrefix=1
-server:
-  port: 8765
 
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka
-    fetch-registry: true
-    register-with-eureka: true
+
+spring:
+  application:
+    name: api-gateway
+
