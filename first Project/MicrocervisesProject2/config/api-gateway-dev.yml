@@ -8,25 +8,10 @@ spring:
           lower-case-service-id: true
 
       routes:
-
-        - id: user-service
-          uri: lb://user-service
-          predicates:
-            - Path=/api/user/**
-          filters:
-            - StripPrefix=1
-
         - id: product-service
           uri: lb://product-service
           predicates:
             - Path=/api/product/**
-          filters:
-            - StripPrefix=1
-
-        - id: inventory-service
-          uri: lb://inventory-service
-          predicates:
-            - Path=/api/inventory/**
           filters:
             - StripPrefix=1
 
@@ -51,6 +36,13 @@ spring:
           filters:
             - StripPrefix=1
 
+        - id: inventory-service
+          uri: lb://inventory-service
+          predicates:
+            - Path=/api/inventory/**
+          filters:
+            - StripPrefix=1
+
         - id: rating-service
           uri: lb://rating-service
           predicates:
@@ -62,6 +54,10 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka
+
+  instance:
+    prefer-ip-address: true
+    hostname: localhost
 
 management:
   endpoints:
