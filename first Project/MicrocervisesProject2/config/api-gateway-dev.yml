@@ -20,10 +20,10 @@ spring:
         - id: product-service
           uri: lb://product-service
           predicates:
-            - Path=/product/**
-            # - Path=/api/product/**
-          # filters:
-          #   - StripPrefix=1
+            # - Path=/product/**
+            - Path=/api/product/**
+          filters:
+            - StripPrefix=1
 
         # Order Service
         - id: order-service
@@ -65,9 +65,3 @@ spring:
           filters:
             - StripPrefix=1
 
-eureka:
-  client:
-    register-with-eureka: true
-    fetch-registry: true
-    service-url:
-      defaultZone: http://localhost:8761/eureka
